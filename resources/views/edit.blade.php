@@ -11,7 +11,7 @@
     <title>Edit Student Data</title>
   </head>
   <body>
-    <div class="text-center">
+    <div class="text-center mt-5">
         <h1>HELLO, CRUD</h1>
         <p>This is a simple CRUD application</p>
     </div>

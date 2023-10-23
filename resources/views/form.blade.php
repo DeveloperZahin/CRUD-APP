@@ -11,7 +11,7 @@
     <title>Add Student</title>
   </head>
   <body>
-    <div class="text-center">
+    <div class="text-center mt-5">
         <h1>HELLO, CRUD</h1>
         <p>This is a simple CRUD application</p>
     </div>
@@ -35,8 +35,14 @@
             </div>
 
 
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Save</button>
         </form>
+
+        <div class="text-center mt-5">
+            <a href="{{ route('index') }}">
+                <button class="btn btn-md btn-danger">Don't Save</button>
+            </a>
+        </div>
     </div>
 
 

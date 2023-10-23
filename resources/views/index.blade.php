@@ -11,7 +11,7 @@
     <title>HOME</title>
   </head>
   <body>
-    <div class="text-center">
+    <div class="text-center mt-5">
         <h1>Hello, CRUD</h1>
         <p>This is simple CRUD application</p>
     </div>
@@ -21,7 +21,7 @@
         <div class="row">
             <div class="col-md-12">
 
-                
+
                 <!-- alert message-->
                 @if ($message = Session::get('success'))
                     <div class="alert alert-success alert-block">
