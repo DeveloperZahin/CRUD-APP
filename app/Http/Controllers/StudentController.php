@@ -3,8 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\Models\student;
+use Illuminate\Http\Request;
 use App\Http\Requests\StorestudentRequest;
-use App\Http\Requests\UpdatestudentRequest;
+
 
 class StudentController extends Controller
 {
@@ -50,17 +51,17 @@ class StudentController extends Controller
         // $student->email = $request->email;
         // $student->save();
         //return "Successfully";
-        
+
     }
 
     /**
      * Display the specified resource.
      */
     // edit
-    public function edit(StorestudentRequest $request){
+    public function edit(Request $request){
         $id = $request->id;
         $student = Student::find($id);
-        return view('edit',compact('student'));
+        return view('edit',compact('student', 'id'));
     }
 
     // update
@@ -72,18 +73,18 @@ class StudentController extends Controller
         $address = $request->address;
         */
 
-        Contacts::query()->find($request->id)->update([
+        Student::query()->find($request->id)->update([
             'name'   => $request->name,
             'phone'  => $request->phone,
             'address'=> $request->address,
         ]);
 
-        return redirect()->route('contact.index')->with('success','Data updated successfully!');
+        return redirect()->route('index')->with('success','Data updated successfully!');
     }
 
     // delete
     public function delete(Request $request){
-        Contacts::query()->find($request->id)->delete();
+        Student::query()->find($request->id)->delete();
         return redirect()->back()->with('success','Data delete successfully!');
     }
     }

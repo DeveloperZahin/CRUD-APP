@@ -14,16 +14,14 @@
     <div class="text-center">
         <h1>Hello, CRUD</h1>
         <p>This is simple CRUD application</p>
-        <a href="{{ route('form') }}">
-            <button class="btn btn-md btn-primary">Add Data</button>
-        </a>
     </div>
 
 
     <div class="container">
-        {{-- {{ $students}} --}}
         <div class="row">
             <div class="col-md-12">
+
+                
                 <!-- alert message-->
                 @if ($message = Session::get('success'))
                     <div class="alert alert-success alert-block">
@@ -37,6 +35,15 @@
                         <strong>{{ $message }}</strong>
                     </div>
                 @endif
+
+
+
+                <a href="{{ route('form') }}">
+                    <button class="btn btn-md btn-primary">Add Data</button>
+                </a>
+
+
+
                 <div class="table-responsive">
                     <table class="table table-striped ">
 
@@ -57,7 +64,7 @@
 
                         <tbody>
 
-                            @foreach ($students as $student)  
+                            @foreach ($students as $student)
 
                             <tr>
                                 <th scope="row"> {{ $loop->index + 1 }} </th>
@@ -65,10 +72,10 @@
                                 <td> {{ $student->phone }} </td>
                                 <td> {{ $student->email }} </td>
                                 <td>
-                                    <a href="{{ route('edit', $student->id) }}">
+                                    <a href="{{ route('student.edit', $student->id) }}">
                                         <button class="btn btn-sm btn-primary">Edit</button>
                                     </a>
-                                    <a href="{{ route('delete', $student->id) }}">
+                                    <a href="{{ route('student.delete', $student->id) }}">
                                         <button class="btn btn-sm btn-danger">Delete</button>
                                     </a>
                                 </td>
@@ -76,7 +83,7 @@
 
                             @endforeach
 
-                            
+
                         </tbody>
                     </table>
                 </div>

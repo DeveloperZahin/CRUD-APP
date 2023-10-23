@@ -17,8 +17,11 @@
     </div>
 
     <div class="container">
-        <form method="post" action="">
-          @csrf
+        <a href="{{ route('index') }}">
+            <button class="btn btn-md btn-primary">Back Home</button>
+        </a>
+        <form method="post" action=" {{ route('student.update') }} ">
+            @csrf
 
           <input type="text" name="id" hidden value="{{ $id }}">
             <div class="mb-3">
@@ -37,7 +40,7 @@
             </div>
 
 
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="submit" class="btn btn-primary">Save</button>
         </form>
     </div>
 
